@@ -11,6 +11,7 @@ func main()  {
 	// float32 and float 64.
 
 	// Using var.
+	// the green text it's not error, this is data type (string).
 	var myName string = "Julia Veronica"
 	fmt.Println("name: ", myName)
 }
