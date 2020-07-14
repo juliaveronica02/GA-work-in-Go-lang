@@ -36,7 +36,12 @@ func main()  {
 	fmt.Println("1 + 1 = ", 1+1)
 	// result: 1 + 1 =  2.
 
-	// 2. 
+	// 2. example int.
+	fmt.Println("result 1 + 1 = ", 1.0 + 1.0)
+	// Notice that we use the .0 to tell Go that this is a floating point number instead of an integer.
+	// Running this program will give you the same result as before.
+	// result: result 1 + 1 =  2.
+	
 }
 // run: go run main.go.
 // result: name:  Julia Veronica.
