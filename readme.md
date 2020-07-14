@@ -32,3 +32,6 @@ create fileName.go<br>
 ## Run
 cd folderName <br>
 go run main.go
+
+## fmt
+https://golang.org/pkg/fmt/

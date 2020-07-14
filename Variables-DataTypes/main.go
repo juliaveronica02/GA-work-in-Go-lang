@@ -31,6 +31,12 @@ func main()  {
 	var ages = 19
 	fmt.Println("First Name and age: ", firstNames, ages)
 	// result: First Name and age:  Julia 19.
+
+	// 1. example int.
+	fmt.Println("1 + 1 = ", 1+1)
+	// result: 1 + 1 =  2.
+
+	// 2. 
 }
 // run: go run main.go.
 // result: name:  Julia Veronica.
