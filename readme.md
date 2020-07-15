@@ -35,3 +35,9 @@ go run main.go
 
 ## fmt
 https://golang.org/pkg/fmt/
+
+## Golang
+package main : will be executable program. <br>
+import "fmt" : this is from go lang. <br>
+fmt is mean format package for provide input and output . <br>
+func main(){} : main function is going to be called for execution whatever application is executed and function is going to open.
