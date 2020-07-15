@@ -39,8 +39,32 @@ func main()  {
 	// int64: signed 64bit integers (-9223372036854775808 to 9223372036854775807).
 
 	var age int64 = 40
+	fmt.Println("age", age)
 	
 	// a float is a number with decimals.
 	// versions: float32, float64.
-	var favNum float 
+	var favNum float64 = 1.61803398875
+	fmt.Println("favNum", favNum)
+	
+	// we don't need to define the data type, nor a semicolon but we can use them.
+	randNum := 1;
+	fmt.Println("random",randNum);
+
+	// we can't however assihn a non-compatible type later.
+	// randNum = "Hello"
+	// we can use varibales in Println (space is automatically added).
+	fmt.Println("age and favNum", age, " ", favNum)
+
+	var numOne = 1.000
+	var num99 = .999
+
+	// we can perform arithmetic in Println (note that floats arenot accurate).
+	fmt.Println(numOne - num99)
+
+	// arithmetic operators : +, -, *, /, %.
+	fmt.Println("6 + 4 =", 6 + 4)
+	fmt.Println("6 - 4 =", 6 - 4)
+	fmt.Println("6 * 4 =", 6 * 4)
+	fmt.Println("6 / 4 =", 6 / 4)
+	fmt.Println("6 % 4 =", 6 % 4)
 }
