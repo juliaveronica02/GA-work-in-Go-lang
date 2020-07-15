@@ -27,4 +27,4 @@ func main()  {
 // if we want to add html file we can use bellow code.
 // went we run go we just add: go run main.go > index.html.
 // and check your folder it will auto have index.html file on your folder or project.
-// to start html, press go live or ctrl+shift+p and choose live server.
+// to show html, go to index.html and press go live or ctrl+shift+p and choose live server.
