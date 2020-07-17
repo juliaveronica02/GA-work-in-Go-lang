@@ -44,7 +44,7 @@ func main(){} : main function is going to be called for execution whatever appli
 
 listener have 3 methods: <br>
 1. Accept() (Conn, error) 
-Accept waits for and returns the next connection the listener.
+Accept waits for and returns the next connection the listener. at here we can accept when we are listening also we can accept and get back a connection and an air.
 2. Close() error
 Close closes the listener when we finish our programs. Any blocked Accept operations will be unblocked and returns errors.
 3. Addr() Addr
