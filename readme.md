@@ -54,4 +54,7 @@ Addr returns the listener's network address.
 install Go <br>
 after that ctrl+shift+p <br>
 type go: install and update tools <br>
-checklist all and press ok button.
+checklist all and press ok button. <br>
+
+## Error while install and update Go tools
+if we got errors while trying to install these tools, make sure we already installed git and if we do, try and reinstall it. when we initially did this, the installs kept on failing, even though we had git installed. We uninstall git and reinstall and then the tools installed successfully. if most of the tools install, but some fail it could be because a newer version of golang is required, in this case updating to the newest version may fix the issue.
