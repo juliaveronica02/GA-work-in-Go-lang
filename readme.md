@@ -40,4 +40,12 @@ https://golang.org/pkg/fmt/
 package main : will be executable program. <br>
 import "fmt" : this is from go lang. <br>
 fmt is mean format package for provide input and output . <br>
-func main(){} : main function is going to be called for execution whatever application is executed and function is going to open.
+func main(){} : main function is going to be called for execution whatever application is executed and function is going to open. <br>
+
+listener have 3 methods: <br>
+1. Accept() (Conn, error) 
+Accept waits for and returns the next connection the listener.
+2. Close() error
+Close closes the listener when we finish our programs. Any blocked Accept operations will be unblocked and returns errors.
+3. Addr() Addr
+Addr returns the listener's network address.
