@@ -49,3 +49,9 @@ Accept waits for and returns the next connection the listener. at here we can ac
 Close closes the listener when we finish our programs. Any blocked Accept operations will be unblocked and returns errors.
 3. Addr() Addr
 Addr returns the listener's network address.
+
+## Extension
+install Go <br>
+after that ctrl+shift+p <br>
+type go: install and update tools <br>
+checklist all and press ok button.
