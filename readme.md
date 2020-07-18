@@ -6,6 +6,10 @@ wget https://dl.google.com/go/go1.11.linux-amd64.tar.gz <br>
 sudo tar -xvf go1.11.linux-amd64.tar.gz <br>
 sudo mv go /usr/local <br>
 export GOROOT=/usr/local/go <br>
+export GOPATH=$HOME/Projects/Proj1 <br>
+export PATH=$GOPATH/bin:$GOROOT/bin:$PATH <br>
+go version <br>
+go env <br>
 
 OR We can use: <br>
 sudo apt-get update <br>
