@@ -67,7 +67,8 @@ func getBooksById(w http.ResponseWriter, r *http.Request) {
 func createBooks(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	var book Book
-	_ = json.NewDecoder(r.body).Decode(&book)
+	_ = json.NewDecoder(r.Body).Decode(&book)
+	// try using capital letter.
 	book.ID = strconv.Itoa(rand.Intn(1000000)) // Mock ID - not safe.
 	books = append(books, book)
 	json.NewEncoder(w).Encode(book)
