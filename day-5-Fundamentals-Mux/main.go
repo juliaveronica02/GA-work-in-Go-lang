@@ -7,8 +7,11 @@ package main
 // strconv is convert string.
 // go get -u github.com/gorilla/mux is to create a router.
 import (
+	"encoding/json"
 	"log"
+	"math/rand"
 	"net/http"
+	"strconv"
 
 	"github.com/gorilla/mux"
 )
@@ -30,12 +33,53 @@ type Book struct {
 // seperate struct for the author.
 // author  struct (we can add another else).
 type Author struct {
-	firstName string `json:"firstname"`
-	lastName  string `json:"firstname"`
+	Firstname string `json:"firstname"`
+	Lastname  string `json:"lastname"`
 }
 
+// init books var as a slice book struct.
+var books []Book
+
 // Get all books function (handleFunc).
-func getBooks() {
+// w http.ResponseWriter it was same when using nodejs app.get("", res).
+// r *http.Request it was sama when using nodejs is means req.
+func getBooks(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(books)
+}
+
+// get book by id.
+func getBooksById(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "application/json")
+	// mux is our router.
+	params := mux.Vars(r) // get params.
+	// loop through books and find with id.
+	for _, item := range books {
+		if item.ID == params["id"] {
+			json.NewEncoder(w).Encode(item)
+			return
+		}
+	}
+	json.NewEncoder(w).Encode(&Book{})
+}
+
+// create a new book.
+func createBooks(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "application/json")
+	var book Book
+	_ = json.NewDecoder(r.body).Decode(&book)
+	book.ID = strconv.Itoa(rand.Intn(1000000)) // Mock ID - not safe.
+	books = append(books, book)
+	json.NewEncoder(w).Encode(book)
+}
+
+// update books by id.
+func updateBooks(w http.ResponseWriter, r *http.Request) {
+
+}
+
+// delete books by id.
+func deleteBooks(w http.ResponseWriter, r *http.Request) {
 
 }
 
@@ -43,12 +87,15 @@ func main() {
 	// init router.
 	r := mux.NewRouter()
 
+	// Mock data (todo implement database).
+	books = append(books, Book{ID: "1", Isbn: "2343", Title: "Book One", Author: &Author{Firstname: "Julia", Lastname: "Veronica"}})
+
 	// router handlers / endpoints.
-	r.HandleFunc("api/books", getBooks).Methods("GET")
-	r.HandleFunc("api/books/{id}", getBooksById).Methods("GET")
-	r.HandleFunc("api/books", createBooks).Methods("POST")
-	r.HandleFunc("api/books/{id}", updateBooks).Methods("PUT")
-	r.HandleFunc("api/books/{id}", deleteBooks).Methods("DELETE")
+	r.HandleFunc("/api/show", getBooks).Methods("GET")
+	r.HandleFunc("/api/show/{id}", getBooksById).Methods("GET")
+	r.HandleFunc("/api/create", createBooks).Methods("POST")
+	r.HandleFunc("/api/update/{id}", updateBooks).Methods("PUT")
+	r.HandleFunc("/api/delete/{id}", deleteBooks).Methods("DELETE")
 	// make a port pass in the router.
 	// use log.Fatal: if it fails we get a throw an error.
 	log.Fatal(http.ListenAndServe(":8080", r))
