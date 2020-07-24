@@ -27,7 +27,8 @@ source ~/.profile <br>
 go version <br>
 
 ## Extension GO
-go 0.15.1 (go team at google)
+go 0.15.1 (go team at google) <br>
+live share (real-time collaborative) <br>
 
 ## Create main.go
 create folderName <br>
@@ -62,3 +63,37 @@ checklist all and press ok button. <br>
 
 ## Error while install and update Go tools
 if we got errors while trying to install these tools, make sure we already installed git and if we do, try and reinstall it. when we initially did this, the installs kept on failing, even though we had git installed. We uninstall git and reinstall and then the tools installed successfully. if most of the tools install, but some fail it could be because a newer version of golang is required, in this case updating to the newest version may fix the issue.
+
+## NOTE!!!
+## Note Golang
+sudo rm -rf go <br>
+sudo rm -rf /usr/local/go/ <br>
+ls <br>
+history | grep tar <br>
+sudo tar -C /usr/local -xzf go1.14.6.linux-amd64.tar.gz <br>
+go version <br>
+cd go/src <br>
+cd nano ~/.bashrc scroll until bottom and add 
+export PATH=$PATH:/usr/local/go/bin <br>
+export PROJECT=$GOPATH/src/github.com/juliaveronica02 below export nvm<br>
+cd nano ~/.profile <br>
+cd source ~/.bashrc <br>
+cd go/scr/github.com/juliaveronica02/whatsapp-go <br>
+
+## Note Struct
+ID is for code and id is for json (postman).
+```javascript
+ID          string `json:"id"`
+```
+
+## vs code shortcut
+alt+ arrow up and arrow down : pindah baris code. <br>
+ctrl+/ : comment one line code. <br>
+ctrl+g+number: go to line code. <br>
+return: debugger (if we have error, next code enable to execute). <br>
+
+## Extension
+GO and live share.
+
+## Postman
+go to collections -> create newFolder (whatsapp-go) -> save -> add request (ctrl+N) -> requestName (get events) -> add -> no environment -> manage environment -> add -> environment name (whatsapp-go) -> key (host), value (localhost:8080) -> update.
