@@ -97,3 +97,45 @@ GO and live share.
 
 ## Postman
 go to collections -> create newFolder (whatsapp-go) -> save -> add request (ctrl+N) -> requestName (get events) -> add -> no environment -> manage environment -> add -> environment name (whatsapp-go) -> key (host), value (localhost:8080) -> update.
+
+## golang instalation
+* download golang from golang.org.
+* sudo nano tar -C /usr/local -xzf ~Download/goVersion.linux-amd64.tar.gz (download is file folder).
+* which go.
+* cd usr/local/go/bin.
+* go version.
+* sudo nano /etc/profile.
+* add file to etc/profile.
+- export PATH=$PATH:/usr/local/go/bin (gopath is our project folder).
+- export PROJECT=$GOPATH/src/github.com/juliaveronica02.
+- export GIT_TERMINAL_PROMPT=1.
+* source /etc/profile.
+* go version.
+* location file will be at home and go folder (this is default from go documentation).
+* mkdir $HOME/go.
+* cd $HOME/go.
+* cd go.
+* mv ~/Desktop/golang/ * . (to move aditional file if we already have golang file).
+* ls (to see if the file success move to $HOME/go).
+
+## zsh
+* sudo apt install zsh.
+* chsh -s $(which zsh).
+* git clone git@github.com:ohmyzsh/ohmyzsh.git
+* rm -rf ohmyzsh.
+* sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+* nano .zshrc
+* change themes to this = ZSH_THEME="agnoster".
+* sudo apt-get install fonts-powerline.
+* whoami
+* source .zshrc
+* change theme (nano .zshrc).
+* ZSH_THEME="amuse".
+* nano .zshrc
+- export PATH=$PATH:/usr/local/go/bin (gopath is our project folder).
+- export PROJECT=$GOPATH/src/github.com/juliaveronica02.
+- export GIT_TERMINAL_PROMPT=1.
+* source .zshrc.
+* go version.
+* logout ubuntu account.
+* open terminal and done.
