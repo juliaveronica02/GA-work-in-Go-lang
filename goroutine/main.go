@@ -2,14 +2,34 @@ package main
 
 import (
 	"fmt"
+	"time"
 )
 
-func hello() {
-	fmt.Println("Hello Goroutine!")
+func numbers() {
+	for i := 1; i <= 5; i++ {
+		time.Sleep(250 * time.Millisecond)
+		fmt.Printf("%d ", i)
+	}
 }
+func alphabets() {
+	for i := 'a'; i <= 'e'; i++ {
+		time.Sleep(400 * time.Millisecond)
+		fmt.Printf("%c ", i)
+	}
+}
+
+// func hello() {
+// 	fmt.Println("Hello Goroutine!")
+// }
 func main() {
-	fmt.Println("this is main function")
+	// time.Sleep(1 * time.Second)
+	// fmt.Println("this is main function")
 	// put goroutine on bottom because the file always execute from top.
 	// if we put on top it's okay to because it will be last program execute.
-	go hello() // call hello function.
+	// go hello() // call hello function.
+	go numbers()
+	go alphabets()
+	time.Sleep(3000 * time.Millisecond)
+	fmt.Println("main terminated")
+	// result: 1 a 2 3 b 4 c 5 d e main terminated.
 }
